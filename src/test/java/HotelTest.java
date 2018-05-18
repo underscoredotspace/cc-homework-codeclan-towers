@@ -58,4 +58,16 @@ public class HotelTest {
         ArrayList<Guest> guests = hotel.guestList(room101);
         assertEquals(1, guests.size());
     }
+
+    @Test
+    public void canGetVacantBedrooms() {
+        room101.addGuest(guest1);
+        hotel.addRoom(robroy);
+        for (int ndx = 0; ndx<10; ndx++) {
+            hotel.addRoom(new Bedroom("20 " + ndx, BedroomType.FAMILY));
+        }
+        ArrayList<Room> vacant = hotel.vacantBedrooms();
+
+        assertEquals(10, vacant.size());
+    }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Hotel {
     private ArrayList<Room> rooms;
@@ -25,5 +26,16 @@ public class Hotel {
 
     public ArrayList<Guest> guestList(Room room) {
         return room.getGuests();
+    }
+
+    public ArrayList<Room> vacantBedrooms() {
+        ArrayList<Room> vacantBedrooms = new ArrayList<>();
+        for (Room room : this.rooms) {
+            if (room instanceof Bedroom && room.guestCount() == 0) {
+                vacantBedrooms.add(room);
+            }
+        }
+
+        return vacantBedrooms;
     }
 }
