@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public abstract class Room {
@@ -15,6 +14,10 @@ public abstract class Room {
         if (this.guestCount() < this.getCapacity()) {
             this.guests.add(guest);
         }
+    }
+
+    public void removeGuest(Guest guest) {
+        this.guests.remove(guest);
     }
 
     public int guestCount() {
