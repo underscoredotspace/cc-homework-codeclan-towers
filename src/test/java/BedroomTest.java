@@ -1,14 +1,14 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class BedroomTest {
     Bedroom bedroom;
 
     @Before
     public void before() {
-        this.bedroom = new Bedroom("128", BedroomType.SINGLE, 75.00);
+        this.bedroom = new Bedroom("128", BedroomType.SINGLE, 75);
     }
 
     @Test
@@ -23,6 +23,11 @@ public class BedroomTest {
 
     @Test
     public void hasRate() {
-        assertEquals(75.00, bedroom.getRate(), 0.01);
+        assertEquals(75, bedroom.getRate());
+    }
+
+    @Test
+    public void hasCapacity() {
+        assertEquals(1, bedroom.getCapacity());
     }
 }

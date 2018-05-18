@@ -1,5 +1,15 @@
 public enum BedroomType {
-    SINGLE,
-    DOUBLE,
-    FAMILY
+    SINGLE(1),
+    DOUBLE(2),
+    FAMILY(4);
+
+    private final int capacity;
+
+    BedroomType(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
 }
