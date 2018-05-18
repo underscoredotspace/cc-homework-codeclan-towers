@@ -1,12 +1,10 @@
 public class Bedroom extends Room {
     private String number;
     private BedroomType type;
-    private int rate;
 
-    Bedroom(String number, BedroomType type, int rate) {
+    Bedroom(String number, BedroomType type) {
         this.number = number;
         this.type = type;
-        this.rate = rate;
     }
 
     public BedroomType getType() {
@@ -14,7 +12,7 @@ public class Bedroom extends Room {
     }
 
     public int getRate() {
-        return rate;
+        return type.getRate();
     }
 
     public String getNumber() {

@@ -12,4 +12,12 @@ public class ConferenceRoom extends Room {
     public int getCapacity() {
         return this.capacity;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getRate() {
+        return this.rate;
+    }
 }
