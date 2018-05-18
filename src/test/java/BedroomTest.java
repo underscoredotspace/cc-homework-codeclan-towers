@@ -1,11 +1,13 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class BedroomTest {
-    Bedroom bedroom;
-    Guest guest1;
+    private Bedroom bedroom;
+    private Guest guest1;
 
     @Before
     public void before() {
@@ -57,5 +59,12 @@ public class BedroomTest {
         bedroom.addGuest(this.guest1);
         bedroom.removeGuest(this.guest1);
         assertEquals(0, bedroom.guestCount());
+    }
+
+    @Test
+    public void canGetGuestList() {
+        bedroom.addGuest(this.guest1);
+        ArrayList<Guest> guests = bedroom.getGuests();
+        assertEquals(1, guests.size());
     }
 }

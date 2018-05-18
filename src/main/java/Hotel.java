@@ -22,4 +22,8 @@ public class Hotel {
     public void checkOut(Bedroom room, Guest guest) {
         room.removeGuest(guest);
     }
+
+    public ArrayList<Guest> guestList(Room room) {
+        return room.getGuests();
+    }
 }
